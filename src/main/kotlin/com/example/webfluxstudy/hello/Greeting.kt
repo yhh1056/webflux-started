@@ -1,4 +1,5 @@
 package com.example.webfluxstudy.hello
 
-class Greeting {
-}
+import com.fasterxml.jackson.annotation.JsonProperty
+
+class Greeting(@JsonProperty("message") val message: String)

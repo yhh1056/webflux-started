@@ -17,9 +17,13 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // This may result in incorrect DNS resolutions on MacOS 이슈
+    runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.87.Final:osx-aarch_64")
 }
 
 tasks.withType<KotlinCompile> {
